@@ -1,0 +1,18 @@
+<app-dashboard></app-dashboard>
+<div class="function-list shadow p-3 mb-5 bg-white rounded"></div>
+<div class="c mt-1 ">
+    <div class="row">
+      <div class="col-md-2" *ngFor="let MachineData of MachineDataArray" >
+        <div class="p-2 border rounded" style="display: flex;   justify-content: space-between;">
+          <div class="machineName"  >    
+            <p class="">{{ MachineData.title }}</p>
+          </div>
+          <div class="machineData">
+          {{ MachineData.Production }}<br>
+          {{ MachineData.Production }}  
+
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>

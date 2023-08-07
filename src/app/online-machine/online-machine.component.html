@@ -1,5 +1,8 @@
 <app-dashboard></app-dashboard>
-<div class="function-list shadow p-3 mb-5 bg-white rounded"></div>
+<div [ngClass]="{'expanded': isExpanded}"  class="function-list border mt-1 ">
+  <button class="btn btn-warning btn-sm rounded m-1 s " (click)="toggleSize()">Display  :-</button>  
+</div>
+
 <div class="c mt-1 ">
     <div class="row">
       <div class="col-md-2" *ngFor="let MachineData of MachineDataArray" >

@@ -24,6 +24,9 @@ export class OnlineMachineComponent {
   
     return Object.keys(this.MachineDataArray[0]);
   }  
-  dropdownItems: string[] = ['Option 1', 'Option 2', 'Option 3', 'Option 4'];
-  selectedOption ?  : string;
+  isExpanded = false;
+  
+  toggleSize() {
+    this.isExpanded = !this.isExpanded;
+  }
 }

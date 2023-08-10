@@ -15,20 +15,20 @@
   .machineData{
     font-size: smaller;
   }  
-  .c{
+  .removeMargin{
     margin-right: 10px; 
     margin-left: 10px;  
   }
   .function-list{
-    height: 40px;
+    height: 39px;
   }
   
-  
-  .expanded {
-    
-    height: 60px;
-  }
-
 .s{
  font-size: 11px; 
+}
+.hideStyle{
+  display: none;
+}
+td{
+  text-align: center;
 }

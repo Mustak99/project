@@ -1,19 +1,27 @@
 <app-dashboard></app-dashboard>
 <div [ngClass]="{'expanded': isExpanded}"  class="function-list border mt-1 ">
-  <button class="btn btn-warning btn-sm rounded m-1 s " (click)="toggleSize()">Display  :-</button>  
+  Display:-
+  <button class="btn btn-warning btn-sm rounded m-1 s " (click)="toggleDiv(0)">Loom</button>  
+  <button class="btn btn-danger btn-sm rounded m-1 s" (click)="toggleDiv(1)">Style</button>
 </div>
-
-<div class="c mt-1 ">
+<div class="removeMargin mt-1 ">
     <div class="row">
-      <div class="col-md-2" *ngFor="let MachineData of MachineDataArray" >
-        <div class="p-2 border rounded" style="display: flex;   justify-content: space-between;">
+      <div class="col-md-2" *ngFor="let MachineData of MachineDataArray"  style="width: 150px;">
+        <div class="p-2 border rounded" style="display: flex;justify-content: space-between;">
           <div class="machineName"  >    
             <p class="">{{ MachineData.title }}</p>
           </div>
-          <div class="machineData">
-          {{ MachineData.Production }}<br>
-          {{ MachineData.Production }}  
-
+          <div class="machineData"  >
+         <table >
+          <tr *ngIf="divVisibility[0]">
+            <th>Loom</th>
+            <td>{{ MachineData.Loom }}</td>
+          </tr> 
+            <tr  *ngIf="divVisibility[1]" >
+              <th>status</th>
+              <td>{{ MachineData.status }}</td>
+            </tr>
+        </table>
         </div>
         </div>
       </div>

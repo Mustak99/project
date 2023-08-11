@@ -20,6 +20,7 @@ export class OnlineMachineComponent {
     { title: 'M2', Loom: '200',  status:'1',stoppage:'0' },
     { title: 'M3', Loom: '1500',  status:'1',stoppage:'0' },
   ]
+  
   getColumns(): string[] {
   
     return Object.keys(this.MachineDataArray[0]);
@@ -36,4 +37,5 @@ export class OnlineMachineComponent {
   toggleDiv(index: number): void {
     this.divVisibility[index] = !this.divVisibility[index];
   }
+  
 }

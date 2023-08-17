@@ -1,0 +1,51 @@
+<app-header></app-header>
+<h6 class="display" (click)="togglehide()" >Display :-</h6> 
+<div class="sidebar shadow " *ngIf="isHide" >
+  <div class="jc">
+  <button  (click)="toggleDiv(0)">Para 1</button>
+  <button  (click)="toggleDiv(1)">Para 2</button>
+  </div>
+  <div class="jc">
+  <button  (click)="toggleDiv(2)">Para 3</button>
+  <button  (click)="toggleDiv(3)">Para 4</button>
+  </div>
+  <div class="jc">
+    <button  (click)="toggleDiv(4)">Para 5</button>
+    <button  (click)="toggleDiv(5)">Para 6</button>
+    </div>
+  <div class="jc">
+    <button  (click)="toggleDiv(6)">Para 7</button>
+    <button  (click)="toggleDiv(7)">Para 8</button>
+    </div>
+  <div class="jc">
+    <button  (click)="toggleDiv(8)">Para 9</button>
+    <button  (click)="toggleDiv(9)">Para10</button>
+    </div>
+</div>
+
+    <div class="row" style="margin-left: 160px;margin-top: 60px; --bs-gutter-x: 0rem;" >
+      
+      <div class="col-md-2  " *ngFor="let MachineData of MachineDataArray" >
+        <div class="p-2 border rounded  jc" style="background-color: rgb(192, 192, 192);" >
+          <div class="machineName "  >    
+            <p class="">{{ MachineData.title }}</p>
+          </div>
+          <div class="machineData"  >
+             <table >
+              <tr *ngIf="divVisibility[0]">
+              <th>Machine</th>
+              <td>{{ MachineData.Loom }}</td>
+              </tr> 
+              <tr  *ngIf="divVisibility[1]" >
+              <th>Status</th>
+              <td>{{ MachineData.status }}</td>
+              </tr>
+              <tr  *ngIf="divVisibility[1]" >
+              <th>Stoppage</th>
+              <td>{{ MachineData.stoppage }}</td>
+              </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>

@@ -1,7 +1,6 @@
 
 .jc{
   display: flex;justify-content: space-evenly;
-  margin-top: 5px;
 }
 .col-md-2 {
     padding: 5px; 
@@ -33,17 +32,10 @@ td ,th{
   text-align: center;
 }
 
-.display{
-  margin-top: 1px;
-  display: flex;
-  width: 108px;
-  position: fixed;
-  overflow: visible;
-}
+
 .sidebar {
-  top: 70px;
+  top: 60px;
   margin-left: 1px;
-  padding: 3px;
   width: 108px;
   color: white;
   background-color: #a36ba9;
@@ -51,11 +43,12 @@ td ,th{
   height: 90.5%;
   text-align: center;
   border-radius: 3px;
-  box-shadow: 200px 10px;
+
 }
 
 
 .sidebar button {
+  margin: 2px;
  font-size: 11px;
  border:none;
  border-radius: 5px;
@@ -74,4 +67,18 @@ td ,th{
   color: white;
 }
 
-
+.status{
+  margin-bottom: 5px;height: 30px;padding: 5px;border-radius: 5px, 5px;
+}
+.btnDeactive{
+  width: 35px;height: 20px;font-size: small; background-color: red; border-radius: 4px;
+}
+.btnActive{
+  width: 35px;height: 20px;font-size: small; background-color: green; border-radius: 4px;
+}
+.green{
+  background-color: green;
+}
+.red{
+  background-color: red;
+}

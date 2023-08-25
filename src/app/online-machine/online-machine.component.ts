@@ -138,33 +138,18 @@ export class OnlineMachineComponent {
     { title: 'M3', Machine: '1500', status: '1', stoppage: '0' },
     { title: 'M1', Machine: '31022', status: '1', stoppage: '0' },
     { title: 'M2', Machine: '200', status: '1', stoppage: '0' },
-    { title: 'M3', Machine: '1500', status: '1', stoppage: '0' },
+    { title: 'M3', Machine: '1500', status: '1', stoppage: '0',para3:'3' },
   ]
 
-  isHide = false;
-   adivVisibility ?: boolean[] ;
-  togglehide() {
-    this.isHide = !this.isHide;
-  }
-  toggleDiv(index: number): void {
-    this.divVisibility[index] = !this.divVisibility[index];
-  }
+ 
 
-  divVisibility: { [key: string]: boolean } = {};
-  toggleableKeys: string[] = [];
   stoppageCount: number = 0;
   activeCount: number = 0;
 
 
   constructor() {
     this.calculateStoppageAndActiveCount();
-    for (const key of Object.keys(this.MachineDataArray[0])) {
-      if (key !== 'title') {
-        this.divVisibility[key] = false;
-        this.toggleableKeys.push(key);
-      }
-    }
-
+    this.buttonToDisplay();
   }
 
   calculateStoppageAndActiveCount() {
@@ -177,4 +162,19 @@ export class OnlineMachineComponent {
       }
     }
   }
+  buttonToDisplay(): string[] {
+    const uniqueKeys = new Set<string>();
+    
+    for (const machineData of this.MachineDataArray) {
+      for (const key of Object.keys(machineData)) {
+        if (key !== 'title') {
+          uniqueKeys.add(key);
+        }
+      }
+    }
+    
+    return Array.from(uniqueKeys).sort();
+  }
+  
+  
 }

@@ -5,7 +5,7 @@
     <div class="btnActive shadow ">{{activeCount}}</div>
   </div> 
   <h6>Display :-</h6>
-  <button *ngFor="let key of toggleableKeys; let i = index" (click)="toggleDiv(i)">{{ key }}</button>
+  <button *ngFor="let key of buttonToDisplay()" >{{ key }}</button>
 
 </div>
 

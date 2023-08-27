@@ -4,14 +4,21 @@
   <div class="bar">
     <div class="row">
       <div class="col bar-1">
-         <select  class="btn-select" >
-          <option>Select</option>
-        <option *ngFor="let key of buttonToDisplay()" >{{key}}</option>
-      </select></div>
+        <div class="dropdown ">
+          <button class="btn btn-primary overflow-visible" (click)="toggleDropdown()">Select an option</button>
+          <div class="dropdown-menu " [ngClass]="{ 'show': isDropdownOpen }">
+            <a class="dropdown-item " >Option 1</a>
+            <a class="dropdown-item" >Option 2</a>
+            <a class="dropdown-item" >Option 3</a>
+          </div>
+        </div>
+      </div>
       <div class="col bar-2"><button style="background-color: green; padding: 10px;">70</button><button style="background-color: red;padding: 10px;">55</button></div>
       <div class="col"></div>
     </div>
    </div>
+
+    
 <!--   
   <div class="jc status">
     <div class="btnDeactive">{{stoppageCount}}</div>
@@ -21,10 +28,10 @@
   <button *ngFor="let key of buttonToDisplay()"  (click)="toggleKeyDisplay(key)">{{ key }}</button>
 
 </div> -->
-
-    <div class="row" style="margin-top: 100px; --bs-gutter-x: -1rem;"> 
+  <div class="" style="margin-top: 100px;margin-left: 4%;">
+    <div class="row " > 
       <div class="col-md-2  " *ngFor="let MachineData of MachineDataArray" >
-        <div class="p-2 border rounded  jc"   [ngStyle]="{'background-color': MachineData.stoppage === '0' ? '#ff3232' : (MachineData.stoppage === '1' ? '#329932' : 'rgb(192, 192, 192)')}" >
+        <div class="p-2 border rounded  jc"   [ngStyle]="{'background-color': MachineData.stoppage === '0' ? '#ff3232' : (MachineData.stoppage === '1' ? '#329932' : '')}" >
           <div class="machineName "  >    
             <p class="">{{ MachineData.title }}</p>
           </div>
@@ -41,3 +48,4 @@
           </div> 
         </div>
       </div> 
+  </div>

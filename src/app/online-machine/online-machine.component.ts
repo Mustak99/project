@@ -190,5 +190,9 @@ export class OnlineMachineComponent {
     }
   }
   
-  
+  isDropdownOpen = false;
+
+  toggleDropdown() {
+    this.isDropdownOpen = !this.isDropdownOpen;
+  }
 }

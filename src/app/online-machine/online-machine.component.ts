@@ -8,7 +8,7 @@ import { Component } from '@angular/core';
 export class OnlineMachineComponent {
   MachineDataArray = [
     { title: 'M1', Machine: '100', status: '1', stoppage: '1',parameter1:"1" },
-    { title: 'M2', Machine: '200', status: '1', stoppage: '4',para:"1" },
+    { title: 'M2', Machine: '200', status: '1', stoppage: '4',para1:"1" },
     { title: 'M3', Machine: '1500', status: '1', stoppage: '1' },
     { title: 'M1', Machine: '31022', status: '1', stoppage: '1' },
     { title: 'M2', Machine: '200', status: '1', stoppage: '1' },
@@ -162,6 +162,10 @@ export class OnlineMachineComponent {
       }
     }
   }
+
+
+
+
   buttonToDisplay(): string[] {
     const uniqueKeys = new Set<string>();
     
@@ -169,11 +173,21 @@ export class OnlineMachineComponent {
       for (const key of Object.keys(machineData)) {
         if (key !== 'title') {
           uniqueKeys.add(key);
+
         }
       }
     }
     
     return Array.from(uniqueKeys).sort();
+  }
+  
+  hiddenKeys: Set<string> = new Set<string>();
+  toggleKeyDisplay(key: string) {
+    if (this.hiddenKeys.has(key)) {
+      this.hiddenKeys.delete(key);
+    } else {
+      this.hiddenKeys.add(key);
+    }
   }
   
   

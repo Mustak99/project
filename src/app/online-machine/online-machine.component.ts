@@ -195,4 +195,8 @@ export class OnlineMachineComponent {
   toggleDropdown() {
     this.isDropdownOpen = !this.isDropdownOpen;
   }
+
+
+
+  
 }

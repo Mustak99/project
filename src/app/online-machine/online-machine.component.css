@@ -6,6 +6,10 @@
     padding: 5px; 
     width: 150px;
   }
+.dropdown-menu{
+  background-color:transparent; border: none;
+}
+
 .machineName{
     background-color: black;
     color:white;
@@ -19,14 +23,6 @@
 .machineData{
     font-size: smaller;
   }  
- 
-
-  
-
-td ,th{
-  text-align: center;
-}
-
 
 .bar {
   width: 100%;
@@ -36,18 +32,25 @@ td ,th{
   top: 56px;
   box-shadow: 0px 1px 1px 0px  #888888;
   background-color: white;
+  
 }
-
-
-.bar button {
+.bar button{
   margin: 2px;
  font-size: 11px;
  border:none;
  border-radius: 5px;
  text-decoration: none;
  color: white;
- background-color: orange;
- padding: 5px;
+ padding: 6px;
+ 
+}
+.dropdown-btn{
+  background-color: #9276ff; 
+}
+.dropdown-menu-list-btn {
+  display: block;width: 90%;
+  margin: 2px;
+ background-color: #9276ff;
 }
 .bar-1{
   display: flex;
@@ -62,26 +65,11 @@ justify-content: center;
 justify-content: right;
 }
 
-.sidebar button.active {
-  color: white;
-}
-
-.sidebar button:hover {
-  background-color: #555;
-  color: white;
-}
-.btn-select{
-  width: 70px; font-size: 11px;padding-left: 10px; 
-
-}
-.status{
-  margin-bottom: 5px;height: 30px;padding: 5px;border-radius: 5px, 5px;
-}
 .btnDeactive{
-  width: 35px;height: 20px;font-size: small; background-color: red; border-radius: 4px;
+  background-color: #ff3232;padding: 10px;
 }
 .btnActive{
-  width: 35px;height: 20px;font-size: small; background-color: green; border-radius: 4px;
+  background-color: #329932; padding: 10px;
 }
 .green{
   background-color: green;
@@ -89,3 +77,6 @@ justify-content: right;
 .red{
   background-color: red;
 }
+
+
+

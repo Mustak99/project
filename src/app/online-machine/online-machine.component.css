@@ -37,17 +37,21 @@
 .bar button{
   margin: 2px;
  font-size: 11px;
- border:none;
- border-radius: 5px;
  text-decoration: none;
- color: white;
+
 }
 .dropdown-btn{
-  background-color: black; 
+  background-color:white; 
+  color:black;
+  border: #9276ff 1px solid;
+}
+:hover .dropdown-btn{
+  background-color: #9276ff;
 }
 .dropdown-menu-list-btn {
-  display: block;width: 90%;
+  display: block;width: 100%;
   margin: 2px;
+  padding: 5px;
  background-color: #9276ff;
 }
 .bar-1{
@@ -64,10 +68,10 @@ justify-content: right;
 }
 
 .btnDeactive{
-  background-color: #ff3232;padding: 10px;
+  background-color: #ff3232;padding: 10px; border-radius: 5px;border:none;
 }
 .BtnActive{
-  background-color: #329932; padding: 10px;
+  background-color: #329932; padding: 10px; border-radius: 5px;border:none;
 }
 .green{
   background-color: green;

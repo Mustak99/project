@@ -5,9 +5,9 @@
     <div class="row">
       <div class="col bar-1">
         <div class="dropdown m-1">
-          <a class=" overflow-visible dropdown-btn" (click)="toggleDropdown()">
+          <button class="btn btn-warning sm overflow-visible dropdown-btn  " (click)="toggleDropdown()">
             Display:
-          </a>
+          </button>
           <div class="dropdown-menu" [ngClass]="{ 'show': isDropdownOpen }">
             <button
               class="dropdown-item dropdown-menu-list-btn"

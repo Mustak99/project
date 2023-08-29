@@ -41,11 +41,9 @@
  border-radius: 5px;
  text-decoration: none;
  color: white;
- padding: 6px;
- 
 }
 .dropdown-btn{
-  background-color: #9276ff; 
+  background-color: black; 
 }
 .dropdown-menu-list-btn {
   display: block;width: 90%;
@@ -68,7 +66,7 @@ justify-content: right;
 .btnDeactive{
   background-color: #ff3232;padding: 10px;
 }
-.btnActive{
+.BtnActive{
   background-color: #329932; padding: 10px;
 }
 .green{

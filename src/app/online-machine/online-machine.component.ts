@@ -12,7 +12,7 @@ export class OnlineMachineComponent {
     { title: 'M3', Machine: '1500', status: '1', stoppage: '1' },
     { title: 'M1', Machine: '31022', status: '1', stoppage: '1' },
     { title: 'M2', Machine: '200', status: '1', stoppage: '1' },
-    { title: 'M3', Machine: '1500', status: '1', stoppage: '0' },
+    { title: 'M3', Machine: '1500', status: '1', stoppage: '1' },
     { title: 'M1', Machine: '31022', status: '1', stoppage: '1' },
     { title: 'M2', Machine: '200', status: '1', stoppage: '0' },
     { title: 'M3', Machine: '1500', status: '1', stoppage: '0' },
@@ -181,15 +181,12 @@ export class OnlineMachineComponent {
     return Array.from(uniqueKeys).sort();
   }
   
-  hiddenKeys: Set<string> = new Set<string>();
-  toggleKeyDisplay(key: string) {
-    if (this.hiddenKeys.has(key)) {
-      this.hiddenKeys.delete(key);
-    } else {
-      this.hiddenKeys.add(key);
-    }
-  }
-  
+
+  keyVisibility: { [key: string]: boolean } = {};
+
+toggleKeyDisplay(key: string) {
+  this.keyVisibility[key] = !this.keyVisibility[key];
+}
   isDropdownOpen = false;
 
   toggleDropdown() {

@@ -1,34 +1,35 @@
 <app-header></app-header>
-<div class="sidebar" >
 
   <div class="bar">
     <div class="row">
       <div class="col bar-1">
         <div class="dropdown m-1">
-          <button class="btn btn-primary overflow-visible dropdown-btn"  (click)="toggleDropdown()">Display :-</button>
-          <div class="dropdown-menu "  [ngClass]="{ 'show': isDropdownOpen }">
-            <button class="dropdown-menu-list-btn" *ngFor="let key of buttonToDisplay()"  (click)="toggleKeyDisplay(key)">{{ key }}</button>
-
+          <button class="btn btn-warning sm overflow-visible dropdown-btn  " (click)="toggleDropdown()">
+            Display
+          </button>
+          <div class="dropdown-menu" [ngClass]="{ 'show': isDropdownOpen }">
+            <button class="dropdown-item dropdown-menu-list-btn" *ngFor="let key of buttonToDisplay()"
+              (click)="toggleKeyDisplay(key)">
+              {{ key }}
+            </button>
           </div>
         </div>
       </div>
-      <div class="col bar-2"><button class="BtnActive"  >70</button>
-        <button class="btnDeactive">55</button>
+      <div class="col bar-2"><button class="BtnActive">{{activeCount}}</button>
+        <button class="btnDeactive">{{stoppageCount}}</button>
       </div>
-      <div class="col bar-3">
-        
-      </div>
+      <div class="col"></div>
     </div>
-   </div>
-
-  <div class="" style="margin-top: 100px;margin-left: 4%;">
-    <div class="row " > 
-      <div class="col-md-2  " *ngFor="let MachineData of MachineDataArray" >
-        <div class="p-2 border rounded  jc"   [ngStyle]="{'background-color': MachineData.stoppage === '0' ? '#329932' : (MachineData.stoppage === '1' ? '#ff3232' : '#a6a6a6')}" >
-          <div class="machineName "  >    
+  </div>
+  <div class="" style="margin-top: 100px;margin-left: 2%;">
+    <div class="row ">
+      <div class="col-md-2  " *ngFor="let MachineData of MachineDataArray">
+        <div class="p-2 border rounded jc"
+          [ngStyle]="{'background-color': MachineData.stoppage === '1' ? '#008000af' : (MachineData.stoppage === '0' ? '#ff0000af' : '#a6a6a6')}">
+          <div class="machineName ">
             <p class="">{{ MachineData.title }}</p>
           </div>
-          <div class="machineData"   >
+          <div class="machineData">
             <table>
               <tr *ngFor="let keyValuePair of MachineData | keyvalue">
                 <ng-container *ngIf="keyValuePair.key !== 'title' && keyVisibility[keyValuePair.key] !== false">
@@ -37,8 +38,8 @@
                 </ng-container>
               </tr>
             </table>
-            </div>
-          </div> 
+          </div>
         </div>
-      </div> 
+      </div>
+    </div>
   </div>

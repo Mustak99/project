@@ -6,13 +6,17 @@
     padding: 5px; 
     width: 150px;
   }
-  .machineName{
+.dropdown-menu{
+  background-color:transparent; border: none;
+}
+
+.machineName{
     background-color: black;
     color:white;
     width:30px;
     border-radius:4px;
     text-align: center;
-    margin-left: -4px;
+
     height: 25px;
 
   }
@@ -36,24 +40,24 @@ background-color: transparent;
   
 }
 .bar button{
-  margin: 3px;
+  margin: 2px;
  font-size: 11px;
+ text-decoration: none;
 
 }
 .dropdown-btn{
   background-color:white; 
   color:black;
-
+  border: #9276ff 1px solid;
 }
-
+:hover .dropdown-btn{
+  background-color: #9276ff;
+}
 .dropdown-menu-list-btn {
-  display: block;
-  width: 91%;
+  display: block;width: 100%;
   margin: 2px;
   padding: 5px;
-  color:white;
-  background-color: #9276ff;
-  border: none;
+ background-color: #9276ff;
 }
 .bar-1{
   display: flex;
@@ -69,20 +73,17 @@ justify-content: right;
 }
 
 .btnDeactive{
-  background-color: #ff3232; border-radius: 5px;border:none;color:white;width: 10%;
+  background-color: #ff3232;padding: 10px; border-radius: 5px;border:none;
 }
-.btnActive{
-  background-color: #329932;border-radius: 5px;border:none;color:white;width: 10%;
+.BtnActive{
+  background-color: #329932; padding: 10px; border-radius: 5px;border:none;
 }
 .green{
-  background-color: green;
+  background-color: rgba(0, 128, 0, 0.766);
 }
 .red{
   background-color: red;
 }
-
-
-
 
 
 

@@ -5,14 +5,14 @@
     <div class="row">
       <div class="col bar-1">
         <div class="dropdown m-1">
-          <a class="btn  overflow-visible dropdown-btn"  (click)="toggleDropdown()">Display </a>
+          <button class="btn btn-primary overflow-visible dropdown-btn"  (click)="toggleDropdown()">Display :-</button>
           <div class="dropdown-menu "  [ngClass]="{ 'show': isDropdownOpen }">
             <button class="dropdown-menu-list-btn" *ngFor="let key of buttonToDisplay()"  (click)="toggleKeyDisplay(key)">{{ key }}</button>
 
           </div>
         </div>
       </div>
-      <div class="col bar-2"><button class="btnActive"  >70</button>
+      <div class="col bar-2"><button class="BtnActive"  >70</button>
         <button class="btnDeactive">55</button>
       </div>
       <div class="col bar-3">
@@ -21,19 +21,19 @@
     </div>
    </div>
 
-  <div class="" style="margin-top: 105px;margin-left: 4%;">
+  <div class="" style="margin-top: 100px;margin-left: 4%;">
     <div class="row " > 
       <div class="col-md-2  " *ngFor="let MachineData of MachineDataArray" >
-        <div class="p-2 border rounded  jc"   [ngStyle]="{'background-color': MachineData.stoppage === '0' ? '#329932' : (MachineData.stoppage === '1' ? '#ff3232' : '#bbb8aa')}" >
+        <div class="p-2 border rounded  jc"   [ngStyle]="{'background-color': MachineData.stoppage === '0' ? '#329932' : (MachineData.stoppage === '1' ? '#ff3232' : '#a6a6a6')}" >
           <div class="machineName "  >    
             <p class="">{{ MachineData.title }}</p>
           </div>
-          <div class="machineData"  >
+          <div class="machineData"   >
             <table>
               <tr *ngFor="let keyValuePair of MachineData | keyvalue">
-                <ng-container *ngIf="keyValuePair.key !== 'title' && !hiddenKeys.has(keyValuePair.key)">
-                  <th >{{ keyValuePair.key }}</th>
-                  <td >{{ keyValuePair.value }}</td>
+                <ng-container *ngIf="keyValuePair.key !== 'title' && keyVisibility[keyValuePair.key] !== false">
+                  <th>{{ keyValuePair.key }}</th>
+                  <td>{{ keyValuePair.value }}</td>
                 </ng-container>
               </tr>
             </table>

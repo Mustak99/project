@@ -15,14 +15,18 @@
           </div>
         </div>
       </div>
-      <div class="col bar-2"><button class="BtnActive">{{activeCount}}</button>
+      <div class="col bar-2">
+        <button class="btnActive">{{activeCount}}</button>
+        <button class="btnIdeal">{{idealCount}}</button>
         <button class="btnDeactive">{{stoppageCount}}</button>
       </div>
-      <div class="col"></div>
+      <div class="col bar-3">
+      </div>
     </div>
   </div>
-  <div class="" style="margin-top: 100px;margin-left: 2%;">
-    <div class="row ">
+
+  <div  style="margin-top: 100px;margin-left: 2.5%;">
+    <div class="row " style="    --bs-gutter-x: 0rem;">
       <div class="col-md-2  " *ngFor="let MachineData of MachineDataArray">
         <div class="p-2 border rounded jc"
           [ngStyle]="{'background-color': MachineData.stoppage === '1' ? '#008000af' : (MachineData.stoppage === '0' ? '#ff0000af' : '#a6a6a6')}">
@@ -32,7 +36,7 @@
           <div class="machineData">
             <table>
               <tr *ngFor="let keyValuePair of MachineData | keyvalue">
-                <ng-container *ngIf="keyValuePair.key !== 'title' && keyVisibility[keyValuePair.key] !== false">
+                <ng-container *ngIf="keyValuePair.key !== 'title' && keyVisibility[keyValuePair.key] ">
                   <th>{{ keyValuePair.key }}</th>
                   <td>{{ keyValuePair.value }}</td>
                 </ng-container>

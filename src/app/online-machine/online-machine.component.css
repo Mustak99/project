@@ -11,10 +11,12 @@
 .machineName {
   background-color: black;
   color: white;
-  width: 30px;
+  padding: 3px;
   border-radius: 4px;
   text-align: center;
-  height: 25px;
+  width: fit-content !important;
+  height: 27px;
+  font-size: small;
 }
 
 .machineData {
@@ -69,11 +71,11 @@
 }
 
 .btnActive {
-  background-color: #008000af;
-  padding: 10px;
-  border-radius: 5px;
-  border: none;
-  color: white;
+    background-color: #008000af;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    color: white;
 }
 
 

@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
 })
 export class OnlineMachineComponent {
   MachineDataArray = 
-  [{"Machine_id":'M1',"MachineNo":1,"style":"1498A122:115","kpicks":205,"meter":228.05,"speed":12222222222,"Air":27.7,"status":0},
+  [{"Machine_id":'M1',"MachineNo":1,"style":"1498A122:115","kpicks":205,"meter":228.05,"speed":122,"Air":27.7,"status":0},
 {"Machine_id":'M2',"MachineNo":2,"style":"1498A122:115","kpicks":239.9,"meter":278.01,"speed":258,"Air":33.0,"status":0},
 {"Machine_id":'M3',"MachineNo":3,"style":"1498A160:150","kpicks":221.74,"meter":243.41,"speed":395,"Air":34.0,"status":0},
 {"Machine_id":'M4',"MachineNo":4,"style":"1701A305:287","kpicks":210.29,"meter":100.06,"speed":379,"Air":38.2,"status":0},
@@ -21,20 +21,20 @@ export class OnlineMachineComponent {
 {"Machine_id":'M12',"MachineNo":12,"style":"1498A160:150","kpicks":156.99,"meter":47.91,"speed":588,"Air":30.3,"status":1},
 {"Machine_id":'M13',"MachineNo":13,"style":"1498A122:115","kpicks":249.8,"meter":157.37,"speed":346,"Air":37.7,"status":1},
 {"Machine_id":'M14',"MachineNo":14,"style":"1701A305:287","kpicks":171.73,"meter":231.16,"speed":402,"Air":26.4,"status":1},
-{"Machine_id":'M15',"MachineNo":15,"style":"1498A160:150","kpicks":275.07,"meter":208.72,"speed":529,"Air":38.1,"status":0},
+{"Machine_id":'M15',"MachineNo":15,"style":"1498A160:150","kpicks":275.07,"meter":208.72,"speed":529,"Air":38.1,"status":2},
 {"Machine_id":'M16',"MachineNo":16,"style":"1701A305:287","kpicks":242.08,"meter":149.24,"speed":374,"Air":38.6,"status":1},
 {"Machine_id":'M17',"MachineNo":17,"style":"1498A160:150","kpicks":232.35,"meter":286.26,"speed":518,"Air":32.3,"status":1},
 {"Machine_id":'M18',"MachineNo":18,"style":"1498A122:115","kpicks":227.13,"meter":191.15,"speed":434,"Air":38.8,"status":1},
 {"Machine_id":'M19',"MachineNo":19,"style":"1498A122:115","kpicks":288.4,"meter":105.69,"speed":382,"Air":36.5,"status":1},
 {"Machine_id":'M20',"MachineNo":20,"style":"1498A160:150","kpicks":130.56,"meter":104.18,"speed":480,"Air":37.2,"status":1},
-{"Machine_id":'M21',"MachineNo":21,"style":"1498A160:150","kpicks":132.17,"meter":270.37,"speed":510,"Air":38.7,"status":1},
+{"Machine_id":'M21',"MachineNo":21,"style":"1498A160:150","kpicks":132.17,"meter":270.37,"speed":510,"Air":38.7,"status":2},
 {"Machine_id":'M22',"MachineNo":22,"style":"1498A122:115","kpicks":286.45,"meter":224.4,"speed":138,"Air":30.6,"status":0},
-{"Machine_id":'M23',"MachineNo":23,"style":"1701A305:287","kpicks":148.77,"meter":277.44,"speed":357,"Air":39.4,"status":0},
+{"Machine_id":'M23',"MachineNo":23,"style":"1701A305:287","kpicks":148.77,"meter":277.44,"speed":357,"Air":39.4,"status":2},
 {"Machine_id":'M24',"MachineNo":24,"style":"1498A160:150","kpicks":225.12,"meter":206.07,"speed":252,"Air":25.1,"status":0},
 {"Machine_id":'M25',"MachineNo":25,"style":"1701A305:287","kpicks":190.12,"meter":262.94,"speed":203,"Air":32.2,"status":0},
-{"Machine_id":'M26',"MachineNo":26,"style":"1701A305:287","kpicks":116.62,"meter":265.71,"speed":434,"Air":39.0,"status":0},
+{"Machine_id":'M26',"MachineNo":26,"style":"1701A305:287","kpicks":116.62,"meter":265.71,"speed":434,"Air":39.0,"status":2},
 {"Machine_id":'M27',"MachineNo":27,"style":"1498A160:150","kpicks":157.43,"meter":150.23,"speed":192,"Air":30.1,"status":1},
-{"Machine_id":'M28',"MachineNo":28,"style":"1701A305:287","kpicks":162.92,"meter":248.13,"speed":405,"Air":34.4,"status":0},
+{"Machine_id":'M28',"MachineNo":28,"style":"1701A305:287","kpicks":162.92,"meter":248.13,"speed":405,"Air":34.4,"status":2},
 {"Machine_id":'M29',"MachineNo":29,"style":"1498A122:115","kpicks":162.0,"meter":24.1,"speed":476,"Air":29.7,"status":1},
 {"Machine_id":'M30',"MachineNo":30,"style":"1498A122:115","kpicks":264.01,"meter":190.2,"speed":599,"Air":25.2,"status":1},
 {"Machine_id":'M31',"MachineNo":31,"style":"1701A305:287","kpicks":161.09,"meter":204.03,"speed":573,"Air":28.2,"status":1},
@@ -106,7 +106,7 @@ export class OnlineMachineComponent {
   keyVisibility: { [key: string]: boolean } = {
     MachineNo: true,
     status: true,
-    style:true
+    kpicks:true
   };
 
   

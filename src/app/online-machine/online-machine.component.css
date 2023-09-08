@@ -25,7 +25,7 @@
 
 .bar {
   width: 100%;
-  color: white;
+  color: black;
   position: fixed;
   height: auto;
   top: 56px;
@@ -40,7 +40,6 @@
 
 .bar-1 {
   display: flex;
-
   justify-content: left;
 }
 
@@ -103,4 +102,3 @@
   width: 100%;
 
 }
-

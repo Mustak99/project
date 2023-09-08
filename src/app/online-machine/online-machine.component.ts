@@ -59,7 +59,7 @@ export class OnlineMachineComponent {
 {"Machine_id":'M50',"MachineNo":50,"style":"1498A122:115","kpicks":142.49,"meter":153.81,"speed":325,"Air":37.3,"status":0},
 {"Machine_id":'M51',"MachineNo":50,"style":"1498A122:115","kpicks":142.49,"meter":153.81,"speed":325,"Air":37.3,"status":0}]
 
-//  machinedata =[ {Machine_id='M1', MachineNo='11', style='1498A122:115',kpicks='291.52' ,meter='294.22',speed='300', Air='30.1',status='0'},{Machine_id='M2',MachineNo='12', style='1701A305:287',kpicks='291.52' ,meter='66',speed='600', Air='25'},{Machine_id='M3',MachineNo='13', style='1498A160:150',kpicks='111.12' ,meter='20',speed='100', Air='40'}] 
+
 
   stoppageCount: number = 0;
   activeCount: number = 0;
@@ -106,7 +106,6 @@ export class OnlineMachineComponent {
   keyVisibility: { [key: string]: boolean } = {
     MachineNo: true,
     status: true,
-    kpicks:true
   };
 
   
@@ -118,6 +117,15 @@ toggleKeyDisplay(key: string) {
   toggleDropdown() {
     this.isDropdownOpen = !this.isDropdownOpen;
   }
+
+
+  displayStyle =false;
+
+openPopup(key: string) {
+  if(key=="kpicks"){
+	this.displayStyle = !this.displayStyle;
+  }
+}
 
   
 }

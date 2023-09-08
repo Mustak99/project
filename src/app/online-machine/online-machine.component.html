@@ -8,25 +8,30 @@
         </button>
         <div class="dropdown-menu" [ngClass]="{ 'show': isDropdownOpen }">
           <button class="dropdown-item dropdown-menu-list-btn" *ngFor="let key of buttonToDisplay()"
-            (click)="toggleKeyDisplay(key)">
+            (click)="toggleKeyDisplay(key);openPopup(key)">
             {{ key }}
           </button>
         </div>
       </div>
     </div>
     <div class="col bar-2">
-      <button class="btnActive">{{activeCount}}</button>
-      <button class="btnIdeal ">{{idealCount}}</button>
-      <button class="btnDeactive ">{{stoppageCount}}</button>
     </div>
-    <div class="col bar-3">
+    <div class="col bar-3" style="margin-right: 35px;">
+      <div style="background-color: green;height: 10px;width: 10px;margin-top: auto;margin-bottom: auto;border-radius: 10px;"></div>
+      <button style="background-color:white;border: none;">{{activeCount}}</button>
+      <div style="background-color: gray;height: 10px;width: 10px;margin-top: auto;margin-bottom: auto;border-radius: 10px;"></div>
+      <button style="background-color:white;border: none;">{{idealCount}}</button>
+      <div style="background-color: red;height: 10px;width: 10px;margin-top: auto;margin-bottom: auto;border-radius: 10px;"></div>
+      <button style="background-color:white;border: none;">{{stoppageCount}}</button>
     </div>
   </div>
 </div>
 
 
-<div class="row" style="margin: 105px 20px 0px 20px;display:grid;gap: 10px;grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));">
-  <div class="col-md-2 p-2 rounded "  *ngFor="let MachineData of MachineDataArray" [ngStyle]="{'background-color': MachineData.status === 1 ? '#008000af' : (MachineData.status === 0 ? '#ff0000af' : '#a6a6a6')}">
+<div class="row"
+  style="margin: 105px 20px 0px 20px;display:grid;gap: 10px;grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));">
+  <div class="col-md-2 p-2 rounded " *ngFor="let MachineData of MachineDataArray"
+    [ngStyle]="{'background-color': MachineData.status === 1 ? '#008000af' : (MachineData.status === 0 ? '#ff0000af' : '#a6a6a6')}">
     <div class=" machineName ">{{ MachineData.Machine_id }}</div>
     <div class="machineData">
       <div class="row" *ngFor="let keyValuePair of MachineData | keyvalue">
@@ -39,4 +44,27 @@
   </div>
 </div>
 
+<div class="modal"   [ngStyle]="{'display':displayStyle}">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header" >
+        <h4 class="modal-title">hello</h4>
+      </div>
+      <div class="modal-body">
+        <p>One Stop Solution for all CS problems</p>
 
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" >
+          Close
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div style="display: flex;position: fixed;bottom:0;right:0;" *ngIf="displayStyle">
+<div style="background-color: white;height: 155px;width: 200px;margin: 0px 10px 5px;box-shadow: 2px 0px 6px 0px gray;" >
+<div></div>
+</div>
+</div>

@@ -117,12 +117,8 @@ export class OnlineMachineComponent {
       this.keyVisibility[key] = !this.keyVisibility[key];
     }
   }
-  isDropdownOpen = false;
-
-  toggleDropdown() {
-    this.isDropdownOpen = !this.isDropdownOpen;
-  }
-
+  
+  
   isSummaryVisible(): boolean {
     for (const summaryItem of this.summary) {
       for (const key in summaryItem) {

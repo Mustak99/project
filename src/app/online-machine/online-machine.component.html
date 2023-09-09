@@ -2,20 +2,15 @@
 <div class="bar">
   <div class="row">
     <div class="col bar-1">
-      <div class="dropdown m-1">
-        <button class="btn btn-warning sm overflow-visible dropdown-btn  " (click)="toggleDropdown()">
-          Display
-        </button>
-        <div class="dropdown-menu" [ngClass]="{ 'show': isDropdownOpen }">
-          <button class="dropdown-item dropdown-menu-list-btn" *ngFor="let key of buttonToDisplay()"
-            (click)="toggleKeyDisplay(key);">
-            {{ key }}
-          </button>
+      <div class="dropdown">
+        <button class="dropdown-button">Display</button>
+        <div class="dropdown-content" >
+            <a  *ngFor="let key of buttonToDisplay()"
+            (click)="toggleKeyDisplay(key);">{{key}}</a>
         </div>
-      </div>
     </div>
-    <div class="col bar-2">
     </div>
+    <div class="col bar-2"></div>
     <div class="col bar-3">
       <div class="activeCircle" ></div>
       <button class="count">{{activeCount}}</button>
@@ -24,40 +19,43 @@
       <div class="stoppageCircle">
       </div>
       <button class="count">{{stoppageCount}}</button>
+      
     </div>
   </div>
 </div>
 
-<div class="row" style="margin-top: 101px;">
-  <div class="col-1" style="width: 200px;background: #dee2e6;padding: 5px;" *ngIf="isSummaryVisible()" >
-    <div class="row" style="background-color: white;box-shadow: 2px 2px 5px 0px #888898;margin-top: 5px;"
-      *ngFor="let item of summary">
-      <ng-container *ngFor="let keyValuePair of item | keyvalue">
-        <ng-container *ngIf="keyVisibility[keyValuePair.key]">
-        <div style="text-align: center;background-color: gray;font-size: smaller;">
-          {{ keyValuePair.key }}</div>
-        <div style="font-size: smaller;" *ngFor="let subKeyValuePair of keyValuePair.value | keyvalue">
-          {{ subKeyValuePair.key }}: {{ subKeyValuePair.value }}</div>
-      </ng-container>
-    </ng-container>
-    </div>
-
-  </div>
+<div class="row row-margin">
   <div class="col" style="padding-left: 0px;margin-left: 0px;">
-    <div class="row "
-      style="margin: 4px 5px 0px 5px; display:grid;gap: 10px;grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));">
-      <div class="col p-2 rounded " *ngFor="let MachineData of MachineDataArray"
-        [ngStyle]="{'background-color': MachineData.status === 1 ? '#008000af' : (MachineData.status === 0 ? '#ff0000af' : '#a6a6a6')}">
+    <div class="row machine-card ">
+      <div class="col p-2 rounded " *ngFor="let MachineData of MachineDataArray" [ngStyle]="{'background-color': MachineData.status === 1 ? '#008000af' : (MachineData.status === 0 ? '#ff0000af' : '#a6a6a6')}">
         <div class=" machineName ">{{ MachineData.Machine_id }}</div>
         <div class="machineData">
           <div class="row" *ngFor="let keyValuePair of MachineData | keyvalue">
             <ng-container *ngIf="keyValuePair.key !== 'Machine_id' && keyVisibility[keyValuePair.key] ">
-              <div class="col" style="  font-weight: bold;">{{ keyValuePair.key }}</div>
-              <div class="col" style="font-size: smaller; text-align: right ;">{{ keyValuePair.value }}</div>
+              <table>
+                <tr>
+                  <td style="font-weight: bold;">{{ keyValuePair.key }}</td>
+                  <td style="font-size: smaller; text-align: right ;">{{ keyValuePair.value }}</td>
+                </tr>
+              </table>
             </ng-container>
           </div>
         </div>
       </div>
+    </div>
+  </div>
+  <div class="col-1 summary-col"  *ngIf="isSummaryVisible()" >
+    <div class="row summary-row"  *ngFor="let item of summary">
+      <ng-container *ngFor="let keyValuePair of item | keyvalue">
+        <ng-container *ngIf="keyVisibility[keyValuePair.key]">
+        <div class="summary-title">
+          {{ keyValuePair.key.toUpperCase() }}</div>
+        <div class="row summary-data d-flex justify-content-between" *ngFor="let subKeyValuePair of keyValuePair.value | keyvalue">
+          <div class="col">{{ subKeyValuePair.key }}</div>
+          <div class="col" style="text-align: right;">{{ subKeyValuePair.value }}</div>
+        </div>
+      </ng-container>
+    </ng-container>
     </div>
   </div>
 </div>

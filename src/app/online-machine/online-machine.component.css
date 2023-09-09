@@ -2,21 +2,6 @@
   --bs-gutter-x: 0rem;
 }
 
-.machineName {
-  background-color: black;
-  color: white;
-  padding: 3px;
-  border-radius: 4px;
-  text-align: center;
-  width: fit-content !important;
-  height: 27px;
-  font-size: small;
-}
-
-.machineData {
-  font-size: smaller;
-}
-
 .bar {
   width: 100%;
   color: black;
@@ -45,32 +30,40 @@
 .bar-3 {
   display: flex;
   justify-content: right;
+  margin-right: 35px;
 }
 
-.btnDeactive {
-  background-color: #ff0000af;
-  padding: 10px;
-  border-radius: 5px;
+.activeCircle{
+  background-color: green;
+  height: 10px;
+  width: 10px;
+  margin-top: auto;
+  margin-bottom: auto;
+  border-radius: 10px;
+}
+
+
+.idealCircle{
+  background-color: gray;
+  height: 10px;width: 10px;
+  margin-top: auto;
+  margin-bottom: auto;
+  border-radius: 10px;
+}
+
+
+.stoppageCircle{
+  background-color: red;
+  height: 10px;
+  width: 10px;
+  margin-top: auto;
+  margin-bottom: auto;
+  border-radius: 10px;
+}
+.count{
+  background-color:white;
   border: none;
-  color: white;
 }
-
-.btnIdeal {
-  background-color: #a6a6a6;
-  padding: 10px;
-  border-radius: 5px;
-  border: none;
-  color: white;
-}
-
-.btnActive {
-    background-color: #008000af;
-    padding: 10px;
-    border-radius: 5px;
-    border: none;
-    color: white;
-}
-
 
 .dropdown-btn {
   text-decoration: none;
@@ -96,6 +89,23 @@
   width: 100%;
 
 }
+
+
+.machineName {
+  background-color: black;
+  color: white;
+  padding: 3px;
+  border-radius: 4px;
+  text-align: center;
+  width: fit-content !important;
+  height: 27px;
+  font-size: small;
+}
+
+.machineData {
+  font-size: smaller;
+}
+
 
 
 

@@ -62,9 +62,9 @@ export class OnlineMachineComponent {
 
 
   summary = [{ 'kpicks': { 'CurrentMonth': 569409.07, 'PreviousShift': 16120.30, 'CurrentShift': 10986.36 } },
-             { 'meter': { 'CurrentMonth': 309523.32, 'PreviousShift': 8914.14, 'CurrentShift': 6031.03 } },
-             { 'speed': { 'CurrentMonth': 531.1, 'PreviousShift': 573.51, 'CurrentShift': 573.96 } }
-           ];
+  { 'meter': { 'CurrentMonth': 309523.32, 'PreviousShift': 8914.14, 'CurrentShift': 6031.03 } },
+  { 'speed': { 'CurrentMonth': 531.1, 'PreviousShift': 573.51, 'CurrentShift': 573.96 } }
+  ];
 
   stoppageCount: number = 0;
   activeCount: number = 0;
@@ -88,8 +88,6 @@ export class OnlineMachineComponent {
       }
     }
   }
-
-
 
 
   buttonToDisplay(): string[] {
@@ -125,6 +123,14 @@ export class OnlineMachineComponent {
     this.isDropdownOpen = !this.isDropdownOpen;
   }
 
-
-
+  isSummaryVisible(): boolean {
+    for (const summaryItem of this.summary) {
+      for (const key in summaryItem) {
+        if (this.keyVisibility[key]) {
+          return true;
+        }
+      }
+    }
+    return false;
+  }
 }

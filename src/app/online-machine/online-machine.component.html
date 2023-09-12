@@ -4,22 +4,21 @@
     <div class="col bar-1">
       <div class="dropdown">
         <button class="dropdown-button">Display</button>
-        <div class="dropdown-content" >
-            <a  *ngFor="let key of buttonToDisplay()"
-            (click)="toggleKeyDisplay(key);">{{key}}</a>
+        <div class="dropdown-content">
+          <a *ngFor="let key of buttonToDisplay()" (click)="toggleKeyDisplay(key);">{{key}}</a>
         </div>
-    </div>
+      </div>
     </div>
     <div class="col bar-2"></div>
     <div class="col bar-3">
-      <div class="activeCircle" ></div>
+      <div class="activeCircle"></div>
       <button class="count">{{activeCount}}</button>
       <div class="idealCircle"></div>
-      <button class="count" >{{idealCount}}</button>
+      <button class="count">{{idealCount}}</button>
       <div class="stoppageCircle">
       </div>
       <button class="count">{{stoppageCount}}</button>
-      
+
     </div>
   </div>
 </div>
@@ -27,7 +26,9 @@
 <div class="row row-margin">
   <div class="col" style="padding-left: 0px;margin-left: 0px;">
     <div class="row machine-card ">
-      <div class="col p-2 rounded " *ngFor="let MachineData of MachineDataArray" [ngStyle]="{'background-color': MachineData.status === 1 ? '#008000af' : (MachineData.status === 0 ? '#ff0000af' : '#a6a6a6')}">
+      <div class="col p-2 rounded " style="cursor: pointer;" *ngFor="let MachineData of MachineDataArray"
+        [ngStyle]="{'background-color': MachineData.status === 1 ? '#008000af' : (MachineData.status === 0 ? '#ff0000af' : '#a6a6a6')}"
+        (click)="openPopup(MachineData)">
         <div class=" machineName ">{{ MachineData.Machine_id }}</div>
         <div class="machineData">
           <div class="row" *ngFor="let keyValuePair of MachineData | keyvalue">
@@ -44,18 +45,47 @@
       </div>
     </div>
   </div>
-  <div class="col-1 summary-col"  *ngIf="isSummaryVisible()" >
-    <div class="row summary-row"  *ngFor="let item of summary">
+  <div class="col-1 summary-col" *ngIf="isSummaryVisible()">
+    <h5 style="text-align: center">Summary</h5>
+    <div class="row summary-row" *ngFor="let item of summary">
       <ng-container *ngFor="let keyValuePair of item | keyvalue">
         <ng-container *ngIf="keyVisibility[keyValuePair.key]">
-        <div class="summary-title">
-          {{ keyValuePair.key.toUpperCase() }}</div>
-        <div class="row summary-data d-flex justify-content-between" *ngFor="let subKeyValuePair of keyValuePair.value | keyvalue">
-          <div class="col">{{ subKeyValuePair.key }}</div>
-          <div class="col" style="text-align: right;">{{ subKeyValuePair.value }}</div>
-        </div>
+          <div class="summary-title">
+            {{ keyValuePair.key.toUpperCase() }}</div>
+          <div class="row summary-data d-flex justify-content-between"
+            *ngFor="let subKeyValuePair of keyValuePair.value | keyvalue">
+            <div class="col">{{ subKeyValuePair.key }}</div>
+            <div class="col" style="text-align: right;">{{ subKeyValuePair.value }}</div>
+          </div>
+        </ng-container>
       </ng-container>
-    </ng-container>
+    </div>
+  </div>
+</div>
+
+<div class="modal" [ngStyle]="{'display': displayStyle}">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content " *ngIf="selectedMachineData">
+      <div class="modal-body">
+        <div class="machineName" style="margin-bottom: 6px;">{{ selectedMachineData.Machine_id }}</div>
+        <div class="machineData">
+          <div class="row" *ngFor="let keyValuePair of selectedMachineData | keyvalue">
+            <ng-container *ngIf="keyValuePair.key !== 'Machine_id'">
+              <table>
+                <tr>
+                  <td style="font-weight: bold;">{{ keyValuePair.key }}</td>
+                  <td style="font-size: smaller; text-align: right;">{{ keyValuePair.value }}</td>
+                </tr>
+              </table>
+            </ng-container>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer" style="padding: 0 !important;">
+        <button type="button" class="btn btn-danger" (click)="closePopup()">
+          Close
+        </button>
+      </div>
     </div>
   </div>
 </div>

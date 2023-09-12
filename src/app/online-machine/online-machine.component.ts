@@ -95,7 +95,7 @@ export class OnlineMachineComponent {
 
     for (const machineData of this.MachineDataArray) {
       for (const key of Object.keys(machineData)) {
-        if (key !== 'Machine_id') {
+        if (key !== 'Machine_id' && key!== 'MachineNo') {
           uniqueKeys.add(key);
 
         }
@@ -113,12 +113,11 @@ export class OnlineMachineComponent {
 
 
   toggleKeyDisplay(key: string) {
-    if (key != "MachineNo") {
       this.keyVisibility[key] = !this.keyVisibility[key];
-    }
+    
   }
   
-  
+
   isSummaryVisible(): boolean {
     for (const summaryItem of this.summary) {
       for (const key in summaryItem) {
@@ -128,5 +127,19 @@ export class OnlineMachineComponent {
       }
     }
     return false;
+  }
+
+
+  displayStyle = "none";
+  selectedMachineData: any = null; 
+
+  openPopup(machineData: any) { 
+    this.selectedMachineData = machineData; 
+    this.displayStyle = "block";
+  }
+  
+  closePopup() {
+    this.selectedMachineData = null; 
+    this.displayStyle = "none";
   }
 }

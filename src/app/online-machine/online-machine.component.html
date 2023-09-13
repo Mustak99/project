@@ -3,7 +3,7 @@
   <div class="row">
     <div class="col bar-1">
       <div class="dropdown">
-        <button class="dropdown-button">Display</button>
+        <button class="dropdown-button ">Display</button>
         <div class="dropdown-content">
           <a *ngFor="let key of buttonToDisplay()" (click)="toggleKeyDisplay(key);">{{key}}</a>
         </div>
@@ -46,7 +46,7 @@
     </div>
   </div>
   <div class="col-1 summary-col" *ngIf="isSummaryVisible()">
-    <h5 style="text-align: center">Summary</h5>
+    <h5 style="text-align: center;border-bottom: 1px solid;padding-bottom: 4px;">Summary</h5>
     <div class="row summary-row" *ngFor="let item of summary">
       <ng-container *ngFor="let keyValuePair of item | keyvalue">
         <ng-container *ngIf="keyVisibility[keyValuePair.key]">

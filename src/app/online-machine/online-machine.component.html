@@ -12,13 +12,13 @@
     <div class="col bar-2"></div>
     <div class="col bar-3">
       <div class="activeCircle"></div>
-      <button class="count">{{activeCount}}</button>
+      <button class="count" (click)="onActiveCountClick()">{{activeCount}}</button>
       <div class="idealCircle"></div>
-      <button class="count">{{idealCount}}</button>
+      <button class="count" (click)="onIdealCountClick()">{{idealCount}}</button>
       <div class="stoppageCircle">
       </div>
-      <button class="count">{{stoppageCount}}</button>
-
+      <button class="count" (click)="onStoppageCountClick()">{{stoppageCount}}</button>
+      <button class="reset" (click)="resetSorting()">Reset</button>
     </div>
   </div>
 </div>

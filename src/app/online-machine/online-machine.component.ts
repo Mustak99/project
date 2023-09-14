@@ -59,7 +59,7 @@ export class OnlineMachineComponent {
     { "Machine_id": 'M50', "MachineNo": 50, "style": "1498A122:115", "kpicks": 142.49, "meter": 153.81, "speed": 325, "Air": 37.3, "status": 0 },
     { "Machine_id": 'M51', "MachineNo": 50, "style": "1498A122:115", "kpicks": 142.49, "meter": 153.81, "speed": 325, "Air": 37.3, "status": 0 }]
 
-
+  originalMachineDataArray: any[];
 
   summary = [{ 'kpicks': { 'CurrentMonth': 569409.07, 'PreviousShift': 16120.30, 'CurrentShift': 10986.36 } },
   { 'meter': { 'CurrentMonth': 309523.32, 'PreviousShift': 8914.14, 'CurrentShift': 6031.03 } },
@@ -71,6 +71,7 @@ export class OnlineMachineComponent {
   idealCount: number = 0;
 
   constructor() {
+    this.originalMachineDataArray = [...this.MachineDataArray];
     this.calculateStoppageAndActiveCount();
     this.buttonToDisplay();
   }
@@ -141,5 +142,39 @@ export class OnlineMachineComponent {
   closePopup() {
     this.selectedMachineData = null; 
     this.displayStyle = "none";
+  }
+
+  sortMachinesByStatus(status: number) {
+    this.MachineDataArray.sort((a) => {
+      if (a.status === status ) {
+        return -1;
+      } else if (a.status !== status ) {
+        return 1;
+      } else {
+        return 0;
+      }
+    });
+  }
+
+
+  onActiveCountClick() {
+    this.sortMachinesByStatus(1); 
+  }
+
+
+  onIdealCountClick() {
+    this.sortMachinesByStatus(2); 
+  }
+
+  
+  onStoppageCountClick() {
+    this.sortMachinesByStatus(0); 
+  }
+  resetSorting() {
+    this.MachineDataArray = [...this.originalMachineDataArray];
+     this.keyVisibility= {
+      MachineNo: true,
+      status: true,
+    };
   }
 }

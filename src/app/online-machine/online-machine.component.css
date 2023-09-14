@@ -66,6 +66,17 @@
   border: none;
 }
 
+.reset{
+  background-color: #ac646c;
+  text-decoration: none;
+  cursor: pointer;
+  color: #ffffff;
+  padding: 7px 8px 7px 8px;
+  border: none;
+  border-radius: 5px;
+  height: 37px;
+  margin-top: 3px !important;
+  }
 
 .dropdown {
   position: relative;
